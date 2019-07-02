@@ -1,0 +1,17 @@
+{
+  "name": "volumewebrender",
+  "version": "1.0.0",
+  "description": "Render the Volume",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "HuiWang",
+  "license": "ISC",
+  "dependencies": {
+    "vtk.js": "^8.11.1"
+  },
+  "devDependencies": {
+    "kw-web-suite": "^8.0.0"
+  }
+}

@@ -9,7 +9,9 @@
   "author": "HuiWang",
   "license": "ISC",
   "dependencies": {
-    "vtk.js": "^8.11.1"
+    "eslint-plugin-import": "^2.18.0",
+    "vtk.js": "^8.11.1",
+    "wslink": "^0.1.11"
   },
   "devDependencies": {
     "kw-web-suite": "^8.0.0"

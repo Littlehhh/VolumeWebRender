@@ -1513,7 +1513,7 @@ eval("/* WEBPACK VAR INJECTION */(function(global) {/**\n * @license\n * webvr-p
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = \"<table>\\n    <tr>\\n        <td>\\n            <label>\\n                <select class='representations' style=\\\"width: 100%\\\">\\n                    <option value='0'>Points</option>\\n                    <option value='1'>Wireframe</option>\\n                    <option value='2' selected>Surface</option>\\n                </select>\\n            </label>\\n        </td>\\n    </tr>\\n    <tr>\\n        <td>\\n            <label>\\n                <input class='resolution' type='range' min='4' max='80' value='6' />\\n            </label>\\n        </td>\\n    </tr>\\n</table>\\n\";\n\n//# sourceURL=webpack:///./src/controller.html?");
+eval("module.exports = \"<table>\\n    <tr>\\n        <td>\\n            <label for=\\\"representations\\\">BBB\\n                <select class='representations' style=\\\"width: 100%\\\">\\n                    <option value='0'>Points</option>\\n                    <option value='1'>WireFrame</option>\\n                    <option value='2' selected>Surface</option>\\n                </select>\\n            </label>\\n        </td>\\n    </tr>\\n    <tr>\\n        <td>\\n            <label for=\\\"resolution\\\"> AAA\\n                <input class='resolution' type='range' min='4' max='80' value='6' />\\n            </label>\\n        </td>\\n    </tr>\\n</table>\\n\";\n\n//# sourceURL=webpack:///./src/controller.html?");
 
 /***/ }),
 

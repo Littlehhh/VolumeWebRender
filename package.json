@@ -20,6 +20,12 @@
     "wslink": "^0.1.11"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-sourcemaps": "^2.6.5",
     "kw-web-suite": "^8.0.0"
   },
   "repository": {

@@ -41753,15 +41753,14 @@ __webpack_require__.r(__webpack_exports__);
 // ----------------------------------------------------------------------------
 
 // let file = '/Users/hui/Data/CC0120_siemens_15_58_F.nii.gz';
-const fullScreenRenderer = vtk_js_Sources_Rendering_Misc_FullScreenRenderWindow__WEBPACK_IMPORTED_MODULE_0__["default"].newInstance();
+const fullScreenRenderer = vtk_js_Sources_Rendering_Misc_FullScreenRenderWindow__WEBPACK_IMPORTED_MODULE_0__["default"].newInstance({
+     background: [0,0,0],
+});
 const renderer = fullScreenRenderer.getRenderer();
 
 const renderWindow = fullScreenRenderer.getRenderWindow();
-
-// ----------------------------------------------------------------------------
-// Example code
-// ----------------------------------------------------------------------------
-
+fullScreenRenderer.addController(_controller_html__WEBPACK_IMPORTED_MODULE_8___default.a);
+let Volume;
 function ImportVolume(files) {
     console.log("Volume Import Started");
     Object(itk_readImageFile__WEBPACK_IMPORTED_MODULE_1__["default"])(null, files).then(({ image, webWorker })=>{
@@ -41794,7 +41793,6 @@ fileDialog.addEventListener("change", function(event){
     Object(itk_readImageFile__WEBPACK_IMPORTED_MODULE_1__["default"])(null, file).then(({ image: itkImage, webWorker })=>{
         webWorker.terminate();
 
-        let Volume;
         Volume = vtk_js_Sources_Common_DataModel_ITKHelper__WEBPACK_IMPORTED_MODULE_2__["default"].convertItkToVtkImage(itkImage);
         console.log(itkImage);
         console.log(Volume);
@@ -41813,9 +41811,7 @@ fileDialog.addEventListener("change", function(event){
 
 
         // pipeline
-        Mapper.setInputData(Volume);
-        Actor.setMapper(Mapper);
-        renderer.addActor(Actor);
+
         Actor.getProperty().setRGBTransferFunction(0, ctf);
         Actor.getProperty().setScalarOpacity(0, otf);
         Actor.getProperty().setScalarOpacity(0, 4.5);
@@ -41826,7 +41822,11 @@ fileDialog.addEventListener("change", function(event){
         Actor.getProperty().setSpecular(0.3);
         Actor.getProperty().setSpecularPower(8.0);
         // render
-        // renderer.resetCamera();
+        Mapper.setInputData(Volume);
+        Actor.setMapper(Mapper);
+        renderer.addActor(Actor);
+
+        renderer.resetCamera();
         renderWindow.render();
 
     }).catch((err)=>{
@@ -41839,7 +41839,6 @@ fileDialog.addEventListener("change", function(event){
 // UI control handling
 // -----------------------------------------------------------
 
-fullScreenRenderer.addController(_controller_html__WEBPACK_IMPORTED_MODULE_8___default.a);
 const representationSelector = document.querySelector('.representations');
 const resolutionChange = document.querySelector('.resolution');
 
